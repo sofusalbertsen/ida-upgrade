@@ -10,7 +10,7 @@ spec:
         # The GitHub organization or user.
         owner: sofusalbertsen #e.g. eficode-academy
         # The Github repository
-        repo: https://github.com/sofusalbertsen/ida-upgrade #e.g. argocd-katas
+        repo: ida-upgrade #e.g. argocd-katas
         tokenRef: # your github token
           secretName: student-0-github-token # the name of the secret that contains your github token
           key: token # the key in the secret that contains your github token
