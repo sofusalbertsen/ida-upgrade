@@ -20,3 +20,6 @@ Change the current application
 
 `k apply -f bootstrap-app.yaml `
 
+
+## NodePort
+13.53.37.19:31162
