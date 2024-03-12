@@ -23,7 +23,7 @@ spec:
     # Specify the repository URL for the Helm chart.
     - repoURL: 'https://charts.bitnami.com/bitnami'
       # Specify the target revision of the helm repository.
-      targetRevision: 12.4.0
+      targetRevision: 12.6.0
       # Specify the name of the Helm chart as "Jenkins".
       chart: jenkins
       helm:
