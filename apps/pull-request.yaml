@@ -36,7 +36,7 @@ spec:
           - name: image.tag
             value: latest
           - name: prefix
-            value: argo
+            value: ida
           - name: app
             value: "todo-{{head_short_sha}}"
       destination:
