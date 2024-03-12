@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins
+  namespace: argocd
+spec:
+  # Reference to the project name.
+  project: default
+
+  # Define the destination cluster for this application.
+  destination:
+    # The namespace the application should be deployed to.
+    namespace: student-0
+    # Specify the name of the destination cluster, either name or server url.
+    name: in-cluster
+
+  # Define the synchronization policy for the Application.
+  syncPolicy:
+    automated: {}
+
+  # Define where the application will fetch its source from.
+  sources:
+    # Specify the repository URL for the Helm chart.
+    - repoURL: 'https://charts.bitnami.com/bitnami'
+      # Specify the target revision of the helm repository.
+      targetRevision: 12.4.0
+      # Specify the name of the Helm chart as "Jenkins".
+      chart: jenkins
+      helm:
+        # Reference the values file for the Helm chart in another repository.
+        valueFiles:
+          # Include a values file from a location specified by a variable "$values".
+          - $values/jenkins/values.yaml
+
+      # Specify the second source; URL for the Git repository.
+    - repoURL: 'https://github.com/sofusalbertsen/ida-upgrade'
+      # Specify the branch of the Git repository.
+      targetRevision: main
+      # name this source "values" for reference in the above source.
+      ref: values
