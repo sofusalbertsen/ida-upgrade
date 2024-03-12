@@ -1,5 +1,7 @@
 # Ida-upgrade
 
+Hej med jer
+
 Idempotent deployment
 `kubectl create deployment nginx --image=nginx:latest`
 
