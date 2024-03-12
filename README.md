@@ -18,3 +18,7 @@ Change the current application
 
 `kubectl get deployment`
 
+## Add app-application
+
+`k apply -f bootstrap-app.yaml `
+
